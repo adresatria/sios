@@ -13,12 +13,23 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('organization_name');
-            $table->string('organization_type');
+            $table->string('name_organization');
+            $table->string('type_organization');
             $table->text('address');
-            $table->string('npwp')->nullable();
-            $table->string('contact_organization');
+            $table->string('city');
+            $table->string('province');
+            $table->string('npwp_number')->nullable();
+            $table->string('npwp_file')->nullable(); // Untuk menyimpan path file NPWP
+            $table->string('phone_number');
+            $table->string('email_organization');
+            $table->string('name_pic');
+            $table->string('pic_phone_number');
+            $table->string('pic_email');
+            $table->string('position');
             $table->timestamps();
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+            
         });
     }
     /**

@@ -20,7 +20,7 @@ class RoleSeeder extends Seeder
 
         // Buat user admin (jika belum ada)
         $admin = User::firstOrCreate(
-            ['email' => 'admin@example.com'],
+            ['email' => 'admin@gmail.com'],
             [
                 'name' => 'Admin',
                 'password' => bcrypt('password'),
@@ -30,7 +30,7 @@ class RoleSeeder extends Seeder
 
         // Buat user sales (opsional)
         $sales = User::firstOrCreate(
-            ['email' => 'sales@example.com'],
+            ['email' => 'sales@gmail.com'],
             [
                 'name' => 'Sales',
                 'password' => bcrypt('password'),
